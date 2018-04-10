@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/MainScene.gd" type="Script" id=1]
+[ext_resource path="res://components/Player.tscn" type="PackedScene" id=2]
+
+[node name="MainScene" type="Node2D"]
+
+script = ExtResource( 1 )
+COLORS = [ Color( 1, 0, 0, 0.392157 ), Color( 0, 1, 0, 0.392157 ), Color( 0, 0, 1, 0.392157 ), Color( 0.743374, 0.112061, 0.796875, 0.392157 ) ]
+numAreas = 10
+
+[node name="Player" parent="." index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 67, 297 )
+
+
