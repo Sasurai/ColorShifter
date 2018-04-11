@@ -5,11 +5,13 @@ extends Area2D
 # var b = "textvar"
 export(float) var speed = 10.0
 
+var _mainScene
 var color = 0
 
 func _ready():
-	color = randi() % get_node("/root/MainScene").COLORS.size()
-	get_node("Sprite").modulate = get_node("/root/MainScene").COLORS[color]
+	_mainScene = get_node("/root/MainScene")
+	color = randi() % _mainScene.kColors.size()
+	get_node("Sprite").modulate = _mainScene.kColors[color]
 
 
 func _process(delta):
@@ -21,17 +23,14 @@ func _physics_process(delta):
 	position.x -= speed
 	if position.x < -40:
 		position.x = 3000
-		color = randi() % get_node("/root/MainScene").COLORS.size()
-		get_node("Sprite").modulate = get_node("/root/MainScene").COLORS[color]
+		color = randi() % _mainScene.kColors.size()
+		get_node("Sprite").modulate = _mainScene.kColors[color]
 
 # TODO : Connect area_entered or body_entered depending if player is area or physicsbody (prob area on first iter)
 
 func _on_ColorArea_body_entered(body):
 	if body.color == color:
-		body.gainScore()
-		pass
+		_mainScene.colorScored()
 	else:
-		body.loseLife()
-		# TODO pain
-		pass
+		_mainScene.colorFailed()
 
