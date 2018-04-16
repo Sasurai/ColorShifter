@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://components/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/UI_Main.png" type="Texture" id=3]
+[ext_resource path="res://components/ColorButton.tscn" type="PackedScene" id=4]
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 kColors = [ Color( 0.640625, 0.0900879, 0.0900879, 0.313726 ), Color( 0.205717, 0.859375, 0.184631, 0.313726 ), Color( 0.0547028, 0.912995, 0.933594, 0.313726 ), Color( 0.684641, 0.175232, 0.773438, 0.313726 ) ]
@@ -22,5 +24,43 @@ kLives = 3
 [node name="Player" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 67, 297 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( 400, 300 )
+z_index = 20
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
+
+[node name="Node2D" type="Node2D" parent="." index="2"]
+
+position = Vector2( 150, 560 )
+z_index = 50
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="ColorButton0" parent="Node2D" index="0" instance=ExtResource( 4 )]
+
+position = Vector2( -100, 0 )
+_sections_unfolded = [ "Transform" ]
+kColor = 0
+
+[node name="ColorButton1" parent="Node2D" index="1" instance=ExtResource( 4 )]
+
+position = Vector2( -30, 0 )
+_sections_unfolded = [ "Transform" ]
+kColor = 1
+
+[node name="ColorButton2" parent="Node2D" index="2" instance=ExtResource( 4 )]
+
+position = Vector2( 40, 0 )
+_sections_unfolded = [ "Transform" ]
+kColor = 2
+
+[node name="ColorButton3" parent="Node2D" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 110, 0 )
+_sections_unfolded = [ "Transform" ]
+kColor = 3
 
 

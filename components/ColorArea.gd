@@ -29,7 +29,7 @@ func _physics_process(delta):
 # TODO : Connect area_entered or body_entered depending if player is area or physicsbody (prob area on first iter)
 
 func _on_ColorArea_body_entered(body):
-	if body.color == color:
+	if body._color == color:
 		_mainScene.colorScored()
 	else:
 		_mainScene.colorFailed()

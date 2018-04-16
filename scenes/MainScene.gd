@@ -77,6 +77,16 @@ func resetGame():
 		_colorAreas[i].speed = kBaseSpeed
 	
 func _process(delta):
+	for i in range(kColors.size()):
+		if Input.is_action_pressed("Action"+String(i)):
+			var prevColorIdx = get_node("Player")._color
+			var newColor = kColors[i]
+			get_node("Player").setColor(newColor, i)
+			get_node("Node2D/ColorButton" + String(i)).setSelected(true)
+			if prevColorIdx > -1 and prevColorIdx != i:
+				get_node("Node2D/ColorButton" + String(prevColorIdx)).setSelected(false)
+
+			
 	if _backingOff == false:
 		return
 		

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var color = -1
+var _color = -1
 
 var speed = Vector2(0.0, 15.0)
 
@@ -11,13 +11,13 @@ var _mainScene
 func _ready():
 	_mainScene = get_node("/root/MainScene")
 
+func setColor(color, colorIdx):
+	_color = colorIdx
+	get_node("Sprite").modulate = color
+	get_node("Sprite").modulate.a = 1.0
+
 func _process(delta):
-	for i in range(_mainScene.kColors.size()):
-		if Input.is_action_pressed("Action"+String(i)):
-			color = i
-			var newColor = _mainScene.kColors[i]
-			newColor.a = 1.0
-			get_node("Sprite").modulate = newColor
+	pass
 
 func _physics_process(delta):
 	lastPhysicsDelta = delta
