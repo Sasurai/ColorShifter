@@ -5,6 +5,9 @@ export(Array) var kColors
 export(int) var kNumAreas = 10
 export(int) var kAreasStartPos = 600
 
+export(float) var kBackoffTime = 2.0
+export(float) var kBackoffSpeed = -5.0
+
 export(float) var kBaseSpeed = 2.0
 export(int) var kBaseScore = 100
 	# Amount of scored areas to increase multiplier (speed & score)
@@ -21,6 +24,8 @@ export(int) var kLives = 3
 # Game state
 var _multiplier = 1
 var _scoreCount = 0
+var _backoffTime = 2.0
+var _backingOff = false
 
 # Player state
 var _lives = 0
@@ -57,6 +62,11 @@ func colorFailed():
 	if _lives == 0:
 		print("Dead with score: " + String(_score))
 		resetGame()
+	else:
+		_backoffTime = kBackoffTime
+		_backingOff = true
+		for i in range(kNumAreas):
+			_colorAreas[i].speed = kBackoffSpeed
 	
 func resetGame():
 	_multiplier = 1
@@ -66,7 +76,12 @@ func resetGame():
 		_colorAreas[i].position = Vector2(kAreasStartPos + i * 300, 500)
 		_colorAreas[i].speed = kBaseSpeed
 	
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	if _backingOff == false:
+		return
+		
+	_backoffTime -= delta
+	if _backoffTime < 0:
+		_backoffTime = 0
+		for i in range(kNumAreas):
+			_colorAreas[i].speed = kBaseSpeed + kSpeedIncrease * _multiplier

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var color = 0 # TODO : Init color as -1 to be able to show "white" ship at beginning?
+var color = -1
 
 var speed = Vector2(0.0, 15.0)
 
