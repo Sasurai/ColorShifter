@@ -49,6 +49,7 @@ func _ready():
 
 func colorScored():
 	_score += kBaseScore + kScoreIncrease * _multiplier
+	get_node("Sprite/ScoreLabel").text = String(_score)
 	_scoreCount += 1
 	if _scoreCount == kMultiplierInterval:
 		_multiplier = min(_multiplier + 1, kMaxMultiplier)
@@ -57,6 +58,7 @@ func colorScored():
 			_colorAreas[i].speed = kBaseSpeed + kSpeedIncrease * _multiplier
 
 func colorFailed():
+	get_node("Sprite/LifeBarLight"+String(_lives)).lifeLost()
 	_lives -= 1
 	_scoreCount = 0
 	if _lives == 0:
@@ -71,7 +73,10 @@ func colorFailed():
 func resetGame():
 	_multiplier = 1
 	_lives = kLives
+	for i in range(1, _lives+1):
+		get_node("Sprite/LifeBarLight"+String(i)).lifeAvailable()
 	_score = 0
+	get_node("Sprite/ScoreLabel").text = String(_score)
 	for i in range(kNumAreas):
 		_colorAreas[i].position = Vector2(kAreasStartPos + i * 300, 500)
 		_colorAreas[i].speed = kBaseSpeed

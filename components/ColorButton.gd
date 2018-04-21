@@ -1,6 +1,7 @@
 extends Area2D
 
 export(int) var kColor
+export(String) var kKey
 
 var _selected setget setSelected, getSelected
 
@@ -13,6 +14,7 @@ func _ready():
 	_sprite.modulate = _mainScene.kColors[kColor]
 	_sprite.modulate.a = 1
 	_sprite.frame = 1
+	get_node("Label").text = kKey
 
 func setSelected(newVal):
 	if newVal == _selected:

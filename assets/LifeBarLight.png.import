@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UI_Main.png-c6061655c2e9cc8c892fba35d64e6130.stex"
+path="res://.import/LifeBarLight.png-e1142a281fa74335a416a6cc44d68ae2.stex"
 
 [deps]
 
-source_file="res://assets/UI_Main.png"
-source_md5="8625392d1bdc05d3cc9b4efc41c78a2d"
+source_file="res://assets/LifeBarLight.png"
+source_md5="c9c82843c9879245e0664f587d7ede68"
 
-dest_files=[ "res://.import/UI_Main.png-c6061655c2e9cc8c892fba35d64e6130.stex" ]
-dest_md5="2440634a7cd97267e0fe3ee706d2e760"
+dest_files=[ "res://.import/LifeBarLight.png-e1142a281fa74335a416a6cc44d68ae2.stex" ]
+dest_md5="cdb986fed32a1dbb0b71955e730c7502"
 
 [params]
 

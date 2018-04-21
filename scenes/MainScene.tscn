@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://components/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/UI_Main.png" type="Texture" id=3]
-[ext_resource path="res://components/ColorButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://components/LifeBarLight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fonts/data-latin.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://components/ColorButton.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 60
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 5 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [node name="MainScene" type="Node2D" index="0"]
 
@@ -33,34 +43,80 @@ z_index = 20
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
+[node name="LifeBarLight1" parent="Sprite" index="0" instance=ExtResource( 4 )]
+
+modulate = Color( 0.777344, 0.395006, 0.0880585, 1 )
+position = Vector2( -346.877, -248.907 )
+_sections_unfolded = [ "Animation", "Visibility" ]
+
+[node name="LifeBarLight2" parent="Sprite" index="1" instance=ExtResource( 4 )]
+
+modulate = Color( 0.903926, 0.929688, 0.105316, 1 )
+position = Vector2( -314.01, -248.907 )
+_sections_unfolded = [ "Animation", "Visibility" ]
+
+[node name="LifeBarLight3" parent="Sprite" index="2" instance=ExtResource( 4 )]
+
+modulate = Color( 0.232086, 0.8125, 0.14917, 1 )
+position = Vector2( -281.143, -248.907 )
+_sections_unfolded = [ "Animation", "Visibility" ]
+
+[node name="ScoreLabel" type="Label" parent="Sprite" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 143.0
+margin_top = -292.0
+margin_right = 391.0
+margin_bottom = -224.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [node name="Node2D" type="Node2D" parent="." index="2"]
 
 position = Vector2( 150, 560 )
 z_index = 50
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="ColorButton0" parent="Node2D" index="0" instance=ExtResource( 4 )]
+[node name="ColorButton0" parent="Node2D" index="0" instance=ExtResource( 6 )]
 
-position = Vector2( -100, 0 )
+position = Vector2( -112.605, 6 )
 _sections_unfolded = [ "Transform" ]
 kColor = 0
+kKey = "A"
 
-[node name="ColorButton1" parent="Node2D" index="1" instance=ExtResource( 4 )]
+[node name="ColorButton1" parent="Node2D" index="1" instance=ExtResource( 6 )]
 
-position = Vector2( -30, 0 )
+position = Vector2( -52, -51.0836 )
 _sections_unfolded = [ "Transform" ]
 kColor = 1
+kKey = "W"
 
-[node name="ColorButton2" parent="Node2D" index="2" instance=ExtResource( 4 )]
+[node name="ColorButton2" parent="Node2D" index="2" instance=ExtResource( 6 )]
 
-position = Vector2( 40, 0 )
+position = Vector2( -52, 6 )
 _sections_unfolded = [ "Transform" ]
 kColor = 2
+kKey = "S"
 
-[node name="ColorButton3" parent="Node2D" index="3" instance=ExtResource( 4 )]
+[node name="ColorButton3" parent="Node2D" index="3" instance=ExtResource( 6 )]
 
-position = Vector2( 110, 0 )
+position = Vector2( 8.54816, 6 )
 _sections_unfolded = [ "Transform" ]
 kColor = 3
+kKey = "D"
 
 
