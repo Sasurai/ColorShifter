@@ -14,6 +14,10 @@ config/name="ColorShifter"
 run/main_scene="res://scenes/MainScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PersistentData="*res://components/PersistentData.tscn"
+
 [display]
 
 window/size/width=800

@@ -29,7 +29,6 @@ kMultiplierInterval = 1
 kMaxMultiplier = 10
 kSpeedIncrease = 1.0
 kScoreIncrease = 10
-kLives = 3
 
 [node name="Player" parent="." index="0" instance=ExtResource( 2 )]
 
@@ -47,18 +46,21 @@ _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 modulate = Color( 0.777344, 0.395006, 0.0880585, 1 )
 position = Vector2( -346.877, -248.907 )
+frame = 1
 _sections_unfolded = [ "Animation", "Visibility" ]
 
 [node name="LifeBarLight2" parent="Sprite" index="1" instance=ExtResource( 4 )]
 
 modulate = Color( 0.903926, 0.929688, 0.105316, 1 )
 position = Vector2( -314.01, -248.907 )
+frame = 1
 _sections_unfolded = [ "Animation", "Visibility" ]
 
 [node name="LifeBarLight3" parent="Sprite" index="2" instance=ExtResource( 4 )]
 
 modulate = Color( 0.232086, 0.8125, 0.14917, 1 )
 position = Vector2( -281.143, -248.907 )
+frame = 1
 _sections_unfolded = [ "Animation", "Visibility" ]
 
 [node name="ScoreLabel" type="Label" parent="Sprite" index="3"]

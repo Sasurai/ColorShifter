@@ -18,9 +18,6 @@ export(float) var kSpeedIncrease = 1.0
 	# Increase in score per multiplier (score is kBaseScore + kScoreIncrease * _multiplier
 export(int) var kScoreIncrease = 10
 
-# Player config
-export(int) var kLives = 3
-
 # Game state
 var _multiplier = 1
 var _scoreCount = 0
@@ -35,17 +32,18 @@ var _score = 0
 var _colorAreaScn
 var _colorAreas = Array()
 
+# Persistent data
+var _persistentData
+
 func _ready():
+	_persistentData = get_node("/root/PersistentData")
 	randomize()
 	_colorAreaScn = load("res://components/ColorArea.tscn")
-	_lives = kLives
-	
 	for i in range(kNumAreas):
 		var colorArea = _colorAreaScn.instance()
-		colorArea.position = Vector2(kAreasStartPos + i * 300, 500)
 		add_child(colorArea)
 		_colorAreas.push_back(colorArea)
-		_colorAreas[i].speed = kBaseSpeed
+	resetGame()
 
 func colorScored():
 	_score += kBaseScore + kScoreIncrease * _multiplier
@@ -58,8 +56,9 @@ func colorScored():
 			_colorAreas[i].speed = kBaseSpeed + kSpeedIncrease * _multiplier
 
 func colorFailed():
-	get_node("Sprite/LifeBarLight"+String(_lives)).lifeLost()
 	_lives -= 1
+	if _lives > 0:
+		get_node("Sprite/LifeBarLight"+String(_lives)).lifeLost()
 	_scoreCount = 0
 	if _lives == 0:
 		print("Dead with score: " + String(_score))
@@ -72,9 +71,12 @@ func colorFailed():
 	
 func resetGame():
 	_multiplier = 1
-	_lives = kLives
-	for i in range(1, _lives+1):
+	_lives = _persistentData._additionalLives + 1
+	for i in range(1, _lives):
 		get_node("Sprite/LifeBarLight"+String(i)).lifeAvailable()
+	for i in range(_lives, _persistentData.kMaxLives + 1):
+		get_node("Sprite/LifeBarLight"+String(i)).lifeUnavailable()
+		
 	_score = 0
 	get_node("Sprite/ScoreLabel").text = String(_score)
 	for i in range(kNumAreas):
