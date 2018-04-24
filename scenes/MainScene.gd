@@ -9,14 +9,18 @@ export(float) var kBackoffTime = 2.0
 export(float) var kBackoffSpeed = -5.0
 
 export(float) var kBaseSpeed = 2.0
-export(int) var kBaseScore = 100
+export(int) var kBaseSeparation = 450
+
+export(int) var kBaseScore = 50
+
 	# Amount of scored areas to increase multiplier (speed & score)
-export(int) var kMultiplierInterval = 1
+export(int) var kMultiplierInterval = 2
 export(int) var kMaxMultiplier = 10
 	# Increase in speed per multiplier (speed is kBaseSpeed + kSpeedIncrease * _multiplier
 export(float) var kSpeedIncrease = 1.0
+export(int) var kSeparationDecrease = 50
 	# Increase in score per multiplier (score is kBaseScore + kScoreIncrease * _multiplier
-export(int) var kScoreIncrease = 10
+export(int) var kScoreIncrease = 20
 
 # Game state
 var _multiplier = 1
@@ -80,7 +84,7 @@ func resetGame():
 	_score = 0
 	get_node("Sprite/ScoreLabel").text = String(_score)
 	for i in range(kNumAreas):
-		_colorAreas[i].position = Vector2(kAreasStartPos + i * 300, 500)
+		_colorAreas[i].position = Vector2(kAreasStartPos + i * kBaseSeparation, 500)
 		_colorAreas[i].speed = kBaseSpeed
 	
 func _process(delta):
@@ -102,3 +106,6 @@ func _process(delta):
 		_backoffTime = 0
 		for i in range(kNumAreas):
 			_colorAreas[i].speed = kBaseSpeed + kSpeedIncrease * _multiplier
+
+func getColorAreaResetPosition():
+	return (kNumAreas * kBaseSeparation) - (kSeparationDecrease * _multiplier)

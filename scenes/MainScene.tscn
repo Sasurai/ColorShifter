@@ -18,17 +18,22 @@ _sections_unfolded = [ "Font", "Settings" ]
 [node name="MainScene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 kColors = [ Color( 0.640625, 0.0900879, 0.0900879, 0.313726 ), Color( 0.205717, 0.859375, 0.184631, 0.313726 ), Color( 0.0547028, 0.912995, 0.933594, 0.313726 ), Color( 0.684641, 0.175232, 0.773438, 0.313726 ) ]
 kNumAreas = 10
 kAreasStartPos = 600
 kBackoffTime = 2.0
 kBackoffSpeed = -5.0
 kBaseSpeed = 2.0
-kBaseScore = 100
-kMultiplierInterval = 1
+kBaseSeparation = 450
+kBaseScore = 50
+kMultiplierInterval = 2
 kMaxMultiplier = 10
 kSpeedIncrease = 1.0
-kScoreIncrease = 10
+kSeparationDecrease = 50
+kScoreIncrease = 20
 
 [node name="Player" parent="." index="0" instance=ExtResource( 2 )]
 
