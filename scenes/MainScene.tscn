@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://components/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://components/LifeBarLight.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/data-latin.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://components/ColorButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Fog.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -125,5 +126,26 @@ position = Vector2( 8.54816, 6 )
 _sections_unfolded = [ "Transform" ]
 kColor = 3
 kKey = "D"
+
+[node name="Fog1" type="Sprite" parent="Node2D" index="4"]
+
+position = Vector2( 420, -260 )
+scale = Vector2( 1.98831, 1 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Fog2" type="Sprite" parent="Node2D" index="5"]
+
+position = Vector2( 475, -260 )
+scale = Vector2( 1.98831, 1 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Fog3" type="Sprite" parent="Node2D" index="6"]
+
+position = Vector2( 525, -260 )
+scale = Vector2( 1.98831, 1 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
 
 
