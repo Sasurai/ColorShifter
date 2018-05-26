@@ -45,9 +45,10 @@ func _ready():
 	_colorAreaScn = load("res://components/ColorArea.tscn")
 	for i in range(kNumAreas):
 		var colorArea = _colorAreaScn.instance()
+		colorArea.position = Vector2(-1000, 500)
+		colorArea.speed = 0
 		add_child(colorArea)
 		_colorAreas.push_back(colorArea)
-	resetGame()
 
 func colorScored():
 	_score += kBaseScore + kScoreIncrease * _multiplier
@@ -66,7 +67,10 @@ func colorFailed():
 	_scoreCount = 0
 	if _lives == 0:
 		print("Dead with score: " + String(_score))
-		resetGame()
+		get_node("MainMenu").visible = true
+		for i in range(kNumAreas):
+			_colorAreas[i].position = Vector2(-1000, 500)
+			_colorAreas[i].speed = 0
 	else:
 		_backoffTime = kBackoffTime
 		_backingOff = true
@@ -103,9 +107,14 @@ func _process(delta):
 		
 	_backoffTime -= delta
 	if _backoffTime < 0:
+		_backingOff = false
 		_backoffTime = 0
 		for i in range(kNumAreas):
 			_colorAreas[i].speed = kBaseSpeed + kSpeedIncrease * _multiplier
 
 func getColorAreaResetPosition():
 	return (kNumAreas * kBaseSeparation) - (kSeparationDecrease * _multiplier)
+
+func _on_MainMenu_play_pressed():
+	get_node("MainMenu").visible = false
+	resetGame()
