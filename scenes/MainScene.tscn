@@ -1,20 +1,59 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/MainScene.gd" type="Script" id=1]
-[ext_resource path="res://components/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/Fog.png" type="Texture" id=3]
-[ext_resource path="res://assets/UI_Main.png" type="Texture" id=4]
-[ext_resource path="res://components/LifeBarLight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://fonts/data-latin.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://components/ColorButton.tscn" type="PackedScene" id=7]
-[ext_resource path="res://components/MainMenu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/UI_Up.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI_Down.png" type="Texture" id=3]
+[ext_resource path="res://components/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Fog.png" type="Texture" id=5]
+[ext_resource path="res://components/LifeBarLight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://fonts/data-latin.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://components/ColorButton.tscn" type="PackedScene" id=8]
+[ext_resource path="res://components/MainMenu.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Close"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/UpUI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 400, -100 ), Vector2( 400, 300 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Open"
+length = 2.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimationPlayer/UpUI:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 400, 300 ), Vector2( 400, -100 ) ]
+}
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 60
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [node name="MainScene" type="Node2D" index="0"]
@@ -38,65 +77,89 @@ kSpeedIncrease = 1.0
 kSeparationDecrease = 50
 kScoreIncrease = 20
 
-[node name="Player" parent="." index="0" instance=ExtResource( 2 )]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
-position = Vector2( 67, 297 )
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Close = SubResource( 2 )
+anims/Open = SubResource( 3 )
+blend_times = [  ]
+_sections_unfolded = [ "Pause", "Playback Options" ]
+
+[node name="UpUI" type="Sprite" parent="AnimationPlayer" index="0"]
+
+position = Vector2( 400, 300 )
+z_index = 10
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="DownUI" type="Sprite" parent="AnimationPlayer" index="1"]
+
+position = Vector2( 400, 300 )
+z_index = 10
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Fog1" type="Sprite" parent="." index="1"]
+[node name="Player" parent="." index="1" instance=ExtResource( 4 )]
+
+position = Vector2( 67, 310 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Fog1" type="Sprite" parent="." index="2"]
 
 position = Vector2( 570, 300 )
 scale = Vector2( 1.98831, 1 )
 z_index = 5
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Fog2" type="Sprite" parent="." index="2"]
+[node name="Fog2" type="Sprite" parent="." index="3"]
 
 position = Vector2( 625, 300 )
 scale = Vector2( 1.98831, 1 )
 z_index = 5
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Fog3" type="Sprite" parent="." index="3"]
+[node name="Fog3" type="Sprite" parent="." index="4"]
 
 position = Vector2( 675, 300 )
 scale = Vector2( 1.98831, 1 )
 z_index = 5
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Sprite" type="Sprite" parent="." index="4"]
+[node name="Node2D2" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 position = Vector2( 400, 300 )
 z_index = 20
-texture = ExtResource( 4 )
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
-[node name="LifeBarLight1" parent="Sprite" index="0" instance=ExtResource( 5 )]
+[node name="LifeBarLight1" parent="Node2D2" index="0" instance=ExtResource( 6 )]
 
 modulate = Color( 0.777344, 0.395006, 0.0880585, 1 )
-position = Vector2( -346.877, -248.907 )
+position = Vector2( -346.877, -277 )
 frame = 1
-_sections_unfolded = [ "Animation", "Visibility" ]
+_sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
-[node name="LifeBarLight2" parent="Sprite" index="1" instance=ExtResource( 5 )]
+[node name="LifeBarLight2" parent="Node2D2" index="1" instance=ExtResource( 6 )]
 
 modulate = Color( 0.903926, 0.929688, 0.105316, 1 )
-position = Vector2( -314.01, -248.907 )
+position = Vector2( -314.01, -277 )
 frame = 1
-_sections_unfolded = [ "Animation", "Visibility" ]
+_sections_unfolded = [ "Animation", "Transform", "Visibility", "Z Index" ]
 
-[node name="LifeBarLight3" parent="Sprite" index="2" instance=ExtResource( 5 )]
+[node name="LifeBarLight3" parent="Node2D2" index="2" instance=ExtResource( 6 )]
 
 modulate = Color( 0.232086, 0.8125, 0.14917, 1 )
-position = Vector2( -281.143, -248.907 )
+position = Vector2( -281.143, -277 )
 frame = 1
-_sections_unfolded = [ "Animation", "Visibility" ]
+_sections_unfolded = [ "Animation", "Transform", "Visibility", "Z Index" ]
 
-[node name="ScoreLabel" type="Label" parent="Sprite" index="3"]
+[node name="ScoreLabel" type="Label" parent="Node2D2" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -120,47 +183,52 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Node2D" type="Node2D" parent="." index="5"]
+[node name="Node2D" type="Node2D" parent="." index="6"]
 
 editor/display_folded = true
 position = Vector2( 150, 560 )
 z_index = 50
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="ColorButton0" parent="Node2D" index="0" instance=ExtResource( 7 )]
+[node name="ColorButton0" parent="Node2D" index="0" instance=ExtResource( 8 )]
 
 position = Vector2( -112.605, 6 )
 _sections_unfolded = [ "Transform" ]
 kColor = 0
 kKey = "A"
 
-[node name="ColorButton1" parent="Node2D" index="1" instance=ExtResource( 7 )]
+[node name="ColorButton1" parent="Node2D" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( -52, -51.0836 )
 _sections_unfolded = [ "Transform" ]
 kColor = 1
 kKey = "W"
 
-[node name="ColorButton2" parent="Node2D" index="2" instance=ExtResource( 7 )]
+[node name="ColorButton2" parent="Node2D" index="2" instance=ExtResource( 8 )]
 
 position = Vector2( -52, 6 )
 _sections_unfolded = [ "Transform" ]
 kColor = 2
 kKey = "S"
 
-[node name="ColorButton3" parent="Node2D" index="3" instance=ExtResource( 7 )]
+[node name="ColorButton3" parent="Node2D" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 8.54816, 6 )
 _sections_unfolded = [ "Transform" ]
 kColor = 3
 kKey = "D"
 
-[node name="MainMenu" parent="." index="6" instance=ExtResource( 8 )]
+[node name="MainMenu" type="Node2D" parent="." index="7"]
+
+z_index = 20
+_sections_unfolded = [ "Z Index" ]
+
+[node name="MainMenu" parent="MainMenu" index="0" instance=ExtResource( 9 )]
 
 margin_right = 495.0
 margin_bottom = 536.0
-_sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
+_sections_unfolded = [ "Grow Direction", "Material", "Pause", "Rect", "Visibility" ]
 
-[connection signal="play_pressed" from="MainMenu" to="." method="_on_MainMenu_play_pressed"]
+[connection signal="play_pressed" from="MainMenu/MainMenu" to="." method="_on_MainMenu_play_pressed"]
 
 

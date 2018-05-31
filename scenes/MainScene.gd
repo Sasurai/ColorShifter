@@ -52,7 +52,7 @@ func _ready():
 
 func colorScored():
 	_score += kBaseScore + kScoreIncrease * _multiplier
-	get_node("Sprite/ScoreLabel").text = String(_score)
+	get_node("Node2D2/ScoreLabel").text = String(_score)
 	_scoreCount += 1
 	if _scoreCount == kMultiplierInterval:
 		_multiplier = min(_multiplier + 1, kMaxMultiplier)
@@ -63,10 +63,11 @@ func colorScored():
 func colorFailed():
 	_lives -= 1
 	if _lives > 0:
-		get_node("Sprite/LifeBarLight"+String(_lives)).lifeLost()
+		get_node("Node2D2/LifeBarLight"+String(_lives)).lifeLost()
 	_scoreCount = 0
 	if _lives == 0:
 		print("Dead with score: " + String(_score))
+		get_node("AnimationPlayer").play("Close")
 		get_node("MainMenu").visible = true
 		for i in range(kNumAreas):
 			_colorAreas[i].position = Vector2(-1000, 500)
@@ -81,12 +82,12 @@ func resetGame():
 	_multiplier = 1
 	_lives = _persistentData._additionalLives + 1
 	for i in range(1, _lives):
-		get_node("Sprite/LifeBarLight"+String(i)).lifeAvailable()
+		get_node("Node2D2/LifeBarLight"+String(i)).lifeAvailable()
 	for i in range(_lives, _persistentData.kMaxLives + 1):
-		get_node("Sprite/LifeBarLight"+String(i)).lifeUnavailable()
+		get_node("Node2D2/LifeBarLight"+String(i)).lifeUnavailable()
 		
 	_score = 0
-	get_node("Sprite/ScoreLabel").text = String(_score)
+	get_node("Node2D2/ScoreLabel").text = String(_score)
 	for i in range(kNumAreas):
 		_colorAreas[i].position = Vector2(kAreasStartPos + i * kBaseSeparation, 500)
 		_colorAreas[i].speed = kBaseSpeed
@@ -117,4 +118,5 @@ func getColorAreaResetPosition():
 
 func _on_MainMenu_play_pressed():
 	get_node("MainMenu").visible = false
+	get_node("AnimationPlayer").play("Open")
 	resetGame()

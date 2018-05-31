@@ -23,9 +23,9 @@ func _physics_process(delta):
 	lastPhysicsDelta = delta
 	
 func _integrate_forces(state):
-	if position.y > 310:
+	if position.y > 330:
 		speed.y = -15.0
-	elif position.y < 290:
+	elif position.y < 310:
 		speed.y = 15.0
 	
 	var pos = state.transform.origin
