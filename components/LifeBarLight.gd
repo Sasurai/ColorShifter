@@ -15,12 +15,10 @@ func _ready():
 #	pass
 
 func lifeAvailable():
-	visible = true
-	frame = 0
+	modulate = Color(0.0, 1.0, 0.0, 1.0)
 
 func lifeLost():
-	visible = true
-	frame = 1
+	modulate = Color(1.0, 0.0, 0.0, 1.0)
 	
 func lifeUnavailable():
-	visible = false
+	modulate = Color(0.0, 0.0, 0.0, 1.0)

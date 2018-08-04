@@ -7,10 +7,7 @@ path="res://.import/Fog.png-01ea68c53c69766fb45d0c9c241faf1c.stex"
 [deps]
 
 source_file="res://assets/Fog.png"
-source_md5="bb891b9042cc167e83c058e551f20ce0"
-
 dest_files=[ "res://.import/Fog.png-01ea68c53c69766fb45d0c9c241faf1c.stex" ]
-dest_md5="e8918ee752ff9ddb4cddb7aa10e48abe"
 
 [params]
 

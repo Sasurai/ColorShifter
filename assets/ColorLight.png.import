@@ -7,10 +7,7 @@ path="res://.import/ColorLight.png-98c6602bdff8996061cbf9fed75a5ddb.stex"
 [deps]
 
 source_file="res://assets/ColorLight.png"
-source_md5="a58d374569b047f3f2ac22f24cca0654"
-
 dest_files=[ "res://.import/ColorLight.png-98c6602bdff8996061cbf9fed75a5ddb.stex" ]
-dest_md5="2c93cc92642dbfc27869ea95ed91c35a"
 
 [params]
 

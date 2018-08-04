@@ -7,10 +7,7 @@ path="res://.import/airship.png-0b0affcef508a4285cce93c871a1a245.stex"
 [deps]
 
 source_file="res://assets/airship.png"
-source_md5="2a795231923073484e31ec3abb3c3f94"
-
 dest_files=[ "res://.import/airship.png-0b0affcef508a4285cce93c871a1a245.stex" ]
-dest_md5="59093a0637468bc35f3ed86f5330b259"
 
 [params]
 

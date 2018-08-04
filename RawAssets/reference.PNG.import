@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UI_Down.png-ba328fc788c9c628e2f470cc0b6413df.stex"
+path="res://.import/reference.PNG-6ed12e1eb4eb49cc92b69b2ab4c45990.stex"
 
 [deps]
 
-source_file="res://RawAssets/UI_Down.png"
-source_md5="0e24f48661944062c86b83535e438b8b"
-
-dest_files=[ "res://.import/UI_Down.png-ba328fc788c9c628e2f470cc0b6413df.stex" ]
-dest_md5="75b39ed0ade5f35890a20d1c5f93b875"
+source_file="res://RawAssets/reference.PNG"
+dest_files=[ "res://.import/reference.PNG-6ed12e1eb4eb49cc92b69b2ab4c45990.stex" ]
 
 [params]
 

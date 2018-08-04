@@ -20,7 +20,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 1 )
-_sections_unfolded = [ "Audio Bus", "Collision", "Pickable", "Transform" ]
+_sections_unfolded = [ "Audio Bus", "Collision", "Material", "Pickable", "Transform", "Visibility" ]
 speed = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
@@ -29,7 +29,6 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-modulate = Color( 1, 1, 1, 0.588235 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 

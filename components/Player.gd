@@ -6,10 +6,8 @@ var speed = Vector2(0.0, 15.0)
 
 var lastPhysicsDelta = 0.0
 
-var _mainScene
-
 func _ready():
-	_mainScene = get_node("/root/MainScene")
+	pass
 
 func setColor(color, colorIdx):
 	_color = colorIdx

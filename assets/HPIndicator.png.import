@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UI_Main_deprecated.png-3ba6f61fce6b129a170fda900d1b6c05.stex"
+path="res://.import/HPIndicator.png-fa016a36280692149b2858124012d338.stex"
 
 [deps]
 
-source_file="res://assets/UI_Main_deprecated.png"
-source_md5="8625392d1bdc05d3cc9b4efc41c78a2d"
-
-dest_files=[ "res://.import/UI_Main_deprecated.png-3ba6f61fce6b129a170fda900d1b6c05.stex" ]
-dest_md5="2440634a7cd97267e0fe3ee706d2e760"
+source_file="res://assets/HPIndicator.png"
+dest_files=[ "res://.import/HPIndicator.png-fa016a36280692149b2858124012d338.stex" ]
 
 [params]
 

@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UI_Up.png-44ce97b59b30906f59d99ecad94fff8b.stex"
+path="res://.import/BuyButton.png-e6eb2776ff0f6e606b5659e516cc834c.stex"
 
 [deps]
 
-source_file="res://RawAssets/UI_Up.png"
-source_md5="53d3d58b2f8794af79cea92084c184d9"
-
-dest_files=[ "res://.import/UI_Up.png-44ce97b59b30906f59d99ecad94fff8b.stex" ]
-dest_md5="f597e0384730dce1367f38c4914f3776"
+source_file="res://assets/BuyButton.png"
+dest_files=[ "res://.import/BuyButton.png-e6eb2776ff0f6e606b5659e516cc834c.stex" ]
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/LifeBarLight.png-e1142a281fa74335a416a6cc44d68ae2.stex"
 [deps]
 
 source_file="res://assets/LifeBarLight.png"
-source_md5="c9c82843c9879245e0664f587d7ede68"
-
 dest_files=[ "res://.import/LifeBarLight.png-e1142a281fa74335a416a6cc44d68ae2.stex" ]
-dest_md5="cdb986fed32a1dbb0b71955e730c7502"
 
 [params]
 
