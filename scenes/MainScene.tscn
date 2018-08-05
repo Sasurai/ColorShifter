@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://scenes/MainScene.gd" type="Script" id=1]
 [ext_resource path="res://assets/UI_Up.png" type="Texture" id=2]
@@ -10,6 +10,12 @@
 [ext_resource path="res://components/Player.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/Fog.png" type="Texture" id=9]
 [ext_resource path="res://components/ColorButton.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/Cyberpunk-Moonlight-Sonata.ogg" type="AudioStream" id=11]
+[ext_resource path="res://assets/music_icon.png" type="Texture" id=12]
+[ext_resource path="res://assets/sound_icon.png" type="Texture" id=13]
+[ext_resource path="res://assets/negative.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/beep-03.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/Pickup_Coin4.wav" type="AudioStream" id=16]
 
 [sub_resource type="Animation" id=1]
 
@@ -1318,6 +1324,38 @@ tracks/2/keys = {
 "values": [ Vector2( 700, 320 ), Vector2( 700, 340 ), Vector2( 700, 320 ) ]
 }
 
+[sub_resource type="AtlasTexture" id=19]
+
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 40, 0, 40, 40 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+
+[sub_resource type="AtlasTexture" id=20]
+
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 40, 40 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+
+[sub_resource type="AtlasTexture" id=21]
+
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 40, 0, 40, 40 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+
+[sub_resource type="AtlasTexture" id=22]
+
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 40, 40 )
+margin = Rect2( 0, 0, 0, 0 )
+filter_clip = false
+
 [node name="MainScene" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
@@ -1341,6 +1379,7 @@ kScoreIncrease = 20
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
 
+editor/display_folded = true
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
@@ -1580,7 +1619,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="NotEnoughTxt1" type="Label" parent="AnimationPlayer/UpUI/Node2D" index="2"]
+[node name="NotEnoughLifeTxt" type="Label" parent="AnimationPlayer/UpUI/Node2D" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1651,7 +1690,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="NotEnoughTxt2" type="Label" parent="AnimationPlayer/UpUI/Node2D" index="5"]
+[node name="NotEnoughFogTxt" type="Label" parent="AnimationPlayer/UpUI/Node2D" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1716,8 +1755,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+disabled = true
 toggle_mode = false
-enabled_focus_mode = 2
+enabled_focus_mode = 0
 shortcut = null
 group = null
 texture_normal = ExtResource( 5 )
@@ -1743,8 +1783,9 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+disabled = true
 toggle_mode = false
-enabled_focus_mode = 2
+enabled_focus_mode = 0
 shortcut = null
 group = null
 texture_normal = ExtResource( 5 )
@@ -1815,6 +1856,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="2"]
 
+editor/display_folded = true
 root_node = NodePath("..")
 autoplay = "Idle"
 playback_process_mode = 1
@@ -1849,6 +1891,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Node2D" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 position = Vector2( 150, 560 )
 z_index = 50
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
@@ -1881,6 +1924,111 @@ _sections_unfolded = [ "Transform" ]
 kColor = 3
 kKey = "D"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+
+stream = ExtResource( 11 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[node name="AudioOptsNode" type="Node2D" parent="." index="5"]
+
+position = Vector2( 50, 30 )
+z_index = 100
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="MusicToggle" type="CheckButton" parent="AudioOptsNode" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -44.0
+margin_top = -24.0
+margin_right = 8.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_icons/off = SubResource( 19 )
+custom_icons/on = SubResource( 20 )
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 0
+shortcut = null
+group = null
+flat = false
+align = 0
+_sections_unfolded = [ "custom_icons" ]
+
+[node name="AudioToggle" type="CheckButton" parent="AudioOptsNode" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4.0
+margin_top = -24.0
+margin_right = 56.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_icons/off = SubResource( 21 )
+custom_icons/on = SubResource( 22 )
+toggle_mode = true
+pressed = true
+enabled_focus_mode = 0
+shortcut = null
+group = null
+flat = false
+align = 0
+_sections_unfolded = [ "custom_icons" ]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 15 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." index="8"]
+
+stream = ExtResource( 16 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
 [connection signal="pressed" from="AnimationPlayer/UpUI/Node2D2/PlayButton" to="." method="_on_PlayButton_pressed"]
+
+[connection signal="pressed" from="AnimationPlayer/UpUI/Node2D/BuyLifeButton" to="." method="_on_BuyLifeButton_pressed"]
+
+[connection signal="pressed" from="AnimationPlayer/UpUI/Node2D/TextureButton2" to="." method="_on_TextureButton2_pressed"]
+
+[connection signal="toggled" from="AudioOptsNode/MusicToggle" to="." method="_on_MusicToggle_toggled"]
+
+[connection signal="toggled" from="AudioOptsNode/AudioToggle" to="." method="_on_AudioToggle_toggled"]
 
 
