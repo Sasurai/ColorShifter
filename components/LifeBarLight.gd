@@ -15,10 +15,10 @@ func _ready():
 #	pass
 
 func lifeAvailable():
-	modulate = Color(0.0, 1.0, 0.0, 1.0)
+	modulate = Color(0.0, 1.0, 0.0, 0.75)
 
 func lifeLost():
-	modulate = Color(1.0, 0.0, 0.0, 1.0)
+	modulate = Color(1.0, 0.0, 0.0, 0.75)
 	
 func lifeUnavailable():
 	modulate = Color(0.0, 0.0, 0.0, 1.0)

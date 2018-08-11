@@ -1,21 +1,22 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://scenes/MainScene.gd" type="Script" id=1]
-[ext_resource path="res://assets/UI_Up.png" type="Texture" id=2]
-[ext_resource path="res://components/LifeBarLight.tscn" type="PackedScene" id=3]
-[ext_resource path="res://fonts/data-latin.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/buybutton_atlas.tres" type="Texture" id=5]
-[ext_resource path="res://assets/BuyButton.png" type="Texture" id=6]
-[ext_resource path="res://assets/UI_Down.png" type="Texture" id=7]
-[ext_resource path="res://components/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/Fog.png" type="Texture" id=9]
-[ext_resource path="res://components/ColorButton.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/Cyberpunk-Moonlight-Sonata.ogg" type="AudioStream" id=11]
-[ext_resource path="res://assets/music_icon.png" type="Texture" id=12]
-[ext_resource path="res://assets/sound_icon.png" type="Texture" id=13]
-[ext_resource path="res://assets/negative.wav" type="AudioStream" id=14]
-[ext_resource path="res://assets/beep-03.wav" type="AudioStream" id=15]
-[ext_resource path="res://assets/Pickup_Coin4.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/background.png" type="Texture" id=2]
+[ext_resource path="res://assets/UI_Up.png" type="Texture" id=3]
+[ext_resource path="res://components/LifeBarLight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://fonts/data-latin.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://assets/buybutton_atlas.tres" type="Texture" id=6]
+[ext_resource path="res://assets/BuyButton.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI_Down.png" type="Texture" id=8]
+[ext_resource path="res://components/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/Fog.png" type="Texture" id=10]
+[ext_resource path="res://components/ColorButton.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/Cyberpunk-Moonlight-Sonata.ogg" type="AudioStream" id=12]
+[ext_resource path="res://assets/music_icon.png" type="Texture" id=13]
+[ext_resource path="res://assets/sound_icon.png" type="Texture" id=14]
+[ext_resource path="res://assets/negative.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/beep-03.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/Pickup_Coin4.wav" type="AudioStream" id=17]
 
 [sub_resource type="Animation" id=1]
 
@@ -60,7 +61,7 @@ tracks/0/keys = {
 size = 60
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -68,7 +69,7 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 50
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -76,7 +77,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 size = 50
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="StyleBoxFlat" id=6]
@@ -85,7 +86,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-bg_color = Color( 0.371094, 0.371094, 0.371094, 1 )
+bg_color = Color( 0.371094, 0.371094, 0.371094, 0.666667 )
 draw_center = true
 border_width_left = 1
 border_width_top = 1
@@ -114,7 +115,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-bg_color = Color( 0.492188, 0.492188, 0.492188, 1 )
+bg_color = Color( 0.492188, 0.492188, 0.492188, 0.666667 )
 draw_center = true
 border_width_left = 1
 border_width_top = 1
@@ -143,7 +144,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-bg_color = Color( 0.269531, 0.269531, 0.269531, 1 )
+bg_color = Color( 0.269531, 0.269531, 0.269531, 0.666667 )
 draw_center = true
 border_width_left = 1
 border_width_top = 1
@@ -172,7 +173,7 @@ content_margin_left = -1.0
 content_margin_right = -1.0
 content_margin_top = -1.0
 content_margin_bottom = -1.0
-bg_color = Color( 0.191406, 0.191406, 0.191406, 1 )
+bg_color = Color( 0.191406, 0.191406, 0.191406, 0.666667 )
 draw_center = true
 border_width_left = 1
 border_width_top = 1
@@ -206,10 +207,10 @@ _sections_unfolded = [ "Font", "Settings" ]
 
 default_font = SubResource( 10 )
 BoxContainer/constants/separation = 4
-Button/colors/font_color = Color( 1, 1, 1, 1 )
-Button/colors/font_color_disabled = Color( 0.65625, 0.65625, 0.65625, 1 )
-Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
-Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/colors/font_color = Color( 1, 1, 1, 0.666667 )
+Button/colors/font_color_disabled = Color( 0.65625, 0.65625, 0.65625, 0.666667 )
+Button/colors/font_color_hover = Color( 1, 1, 1, 0.666667 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 0.666667 )
 Button/colors/icon_color_hover = Color( 1, 1, 1, 1 )
 Button/colors/icon_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
@@ -1239,7 +1240,7 @@ _sections_unfolded = [ "Button", "Button/colors", "Button/styles" ]
 size = 40
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=13]
@@ -1247,7 +1248,7 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 size = 37
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=14]
@@ -1255,13 +1256,13 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 size = 25
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="AtlasTexture" id=15]
 
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 7 )
 region = Rect2( 188, 0, 94, 38 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
@@ -1269,7 +1270,7 @@ filter_clip = false
 [sub_resource type="AtlasTexture" id=16]
 
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 7 )
 region = Rect2( 94, 0, 94, 38 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
@@ -1277,7 +1278,7 @@ filter_clip = false
 [sub_resource type="AtlasTexture" id=17]
 
 flags = 4
-atlas = ExtResource( 6 )
+atlas = ExtResource( 7 )
 region = Rect2( 282, 0, 94, 38 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
@@ -1327,7 +1328,7 @@ tracks/2/keys = {
 [sub_resource type="AtlasTexture" id=19]
 
 flags = 4
-atlas = ExtResource( 12 )
+atlas = ExtResource( 13 )
 region = Rect2( 40, 0, 40, 40 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
@@ -1335,7 +1336,7 @@ filter_clip = false
 [sub_resource type="AtlasTexture" id=20]
 
 flags = 4
-atlas = ExtResource( 12 )
+atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 40, 40 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
@@ -1343,7 +1344,7 @@ filter_clip = false
 [sub_resource type="AtlasTexture" id=21]
 
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 14 )
 region = Rect2( 40, 0, 40, 40 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
@@ -1351,10 +1352,89 @@ filter_clip = false
 [sub_resource type="AtlasTexture" id=22]
 
 flags = 4
-atlas = ExtResource( 13 )
+atlas = ExtResource( 14 )
 region = Rect2( 0, 0, 40, 40 )
 margin = Rect2( 0, 0, 0, 0 )
 filter_clip = false
+
+[sub_resource type="Environment" id=23]
+
+background_mode = 4
+background_sky_custom_fov = 0.0
+background_color = Color( 0, 0, 0, 1 )
+background_energy = 1.0
+background_canvas_max_layer = 0
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 1.0
+ambient_light_sky_contribution = 1.0
+fog_enabled = false
+fog_color = Color( 0.426453, 0.611664, 0.796875, 1 )
+fog_sun_color = Color( 0.796875, 0.666138, 0.404663, 1 )
+fog_sun_amount = 1.0
+fog_depth_enabled = true
+fog_depth_begin = 1.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = false
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 10.0
+ssao_intensity = 41.0
+ssao_radius2 = 10.0
+ssao_intensity2 = 12.0
+ssao_bias = 0.01
+ssao_light_affect = 1.0
+ssao_color = Color( 1, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = true
+glow_levels/1 = false
+glow_levels/2 = false
+glow_levels/3 = false
+glow_levels/4 = true
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 1.0
+glow_strength = 1.0
+glow_bloom = 0.2
+glow_blend_mode = 1
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 1.0
+glow_bicubic_upscale = false
+adjustment_enabled = true
+adjustment_brightness = 1.0
+adjustment_contrast = 1.2
+adjustment_saturation = 1.1
+_sections_unfolded = [ "Adjustments", "Glow", "Glow/levels" ]
 
 [node name="MainScene" type="Node2D" index="0"]
 
@@ -1377,9 +1457,14 @@ kSpeedIncrease = 1.0
 kSeparationDecrease = 50
 kScoreIncrease = 20
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="0"]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
+texture = ExtResource( 2 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
@@ -1394,7 +1479,7 @@ _sections_unfolded = [ "Pause", "Playback Options" ]
 
 position = Vector2( 400, 300 )
 z_index = 10
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Node2D2" type="Node2D" parent="AnimationPlayer/UpUI" index="0"]
@@ -1403,18 +1488,18 @@ position = Vector2( 0, 395 )
 z_index = 20
 _sections_unfolded = [ "Offset", "Transform", "Visibility", "Z Index" ]
 
-[node name="LifeBarLight1" parent="AnimationPlayer/UpUI/Node2D2" index="0" instance=ExtResource( 3 )]
+[node name="LifeBarLight1" parent="AnimationPlayer/UpUI/Node2D2" index="0" instance=ExtResource( 4 )]
 
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 93, -170 )
 
-[node name="LifeBarLight2" parent="AnimationPlayer/UpUI/Node2D2" index="1" instance=ExtResource( 3 )]
+[node name="LifeBarLight2" parent="AnimationPlayer/UpUI/Node2D2" index="1" instance=ExtResource( 4 )]
 
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 213, -170 )
 _sections_unfolded = [ "Animation", "Transform", "Visibility", "Z Index" ]
 
-[node name="LifeBarLight3" parent="AnimationPlayer/UpUI/Node2D2" index="2" instance=ExtResource( 3 )]
+[node name="LifeBarLight3" parent="AnimationPlayer/UpUI/Node2D2" index="2" instance=ExtResource( 4 )]
 
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 333, -170 )
@@ -1437,12 +1522,13 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "0"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="MaxScoreLabel" type="Label" parent="AnimationPlayer/UpUI/Node2D2" index="4"]
 
@@ -1461,12 +1547,13 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "0"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_fonts" ]
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="MaxScoreTxt" type="Label" parent="AnimationPlayer/UpUI/Node2D2" index="5"]
 
@@ -1485,6 +1572,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "Max Score"
 align = 2
 percent_visible = 1.0
@@ -1509,6 +1597,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "0"
 align = 2
 percent_visible = 1.0
@@ -1533,6 +1622,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "Chips"
 align = 2
 percent_visible = 1.0
@@ -1588,7 +1678,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 12 )
-custom_colors/font_color = Color( 0.0546875, 1, 0, 1 )
+custom_colors/font_color = Color( 0.0546875, 1, 0, 0.666667 )
 text = "Improvements"
 align = 1
 percent_visible = 1.0
@@ -1613,6 +1703,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "Add Life"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1660,6 +1751,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "99999"
 align = 2
 percent_visible = 1.0
@@ -1684,6 +1776,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "Clear Fog"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1731,6 +1824,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "99999"
 align = 2
 percent_visible = 1.0
@@ -1760,7 +1854,7 @@ toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
 texture_pressed = SubResource( 15 )
 texture_hover = SubResource( 16 )
 texture_disabled = SubResource( 17 )
@@ -1788,7 +1882,7 @@ toggle_mode = false
 enabled_focus_mode = 0
 shortcut = null
 group = null
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 6 )
 texture_pressed = SubResource( 15 )
 texture_hover = SubResource( 16 )
 texture_disabled = SubResource( 17 )
@@ -1811,6 +1905,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "BUY"
 align = 2
 percent_visible = 1.0
@@ -1835,6 +1930,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 13 )
+custom_colors/font_color = Color( 1, 1, 1, 0.666667 )
 text = "BUY"
 align = 2
 percent_visible = 1.0
@@ -1846,15 +1942,15 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 position = Vector2( 400, 300 )
 z_index = 10
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Player" parent="." index="1" instance=ExtResource( 8 )]
+[node name="Player" parent="." index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 100, 310 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="2"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="3"]
 
 editor/display_folded = true
 root_node = NodePath("..")
@@ -1870,7 +1966,7 @@ blend_times = [  ]
 position = Vector2( 600, 329.566 )
 scale = Vector2( 1.98831, 1 )
 z_index = 5
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Fog2" type="Sprite" parent="AnimationPlayer2" index="1"]
@@ -1878,7 +1974,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 650, 310.434 )
 scale = Vector2( 1.98831, 1 )
 z_index = 5
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Fog3" type="Sprite" parent="AnimationPlayer2" index="2"]
@@ -1886,47 +1982,47 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 position = Vector2( 700, 320.434 )
 scale = Vector2( 1.98831, 1 )
 z_index = 5
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Node2D" type="Node2D" parent="." index="3"]
+[node name="Node2D" type="Node2D" parent="." index="4"]
 
 editor/display_folded = true
 position = Vector2( 150, 560 )
 z_index = 50
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
-[node name="ColorButton0" parent="Node2D" index="0" instance=ExtResource( 10 )]
+[node name="ColorButton0" parent="Node2D" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( -112.605, 6 )
 _sections_unfolded = [ "Transform" ]
 kColor = 0
 kKey = "A"
 
-[node name="ColorButton1" parent="Node2D" index="1" instance=ExtResource( 10 )]
+[node name="ColorButton1" parent="Node2D" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( -52, -51.0836 )
 _sections_unfolded = [ "Transform" ]
 kColor = 1
 kKey = "W"
 
-[node name="ColorButton2" parent="Node2D" index="2" instance=ExtResource( 10 )]
+[node name="ColorButton2" parent="Node2D" index="2" instance=ExtResource( 11 )]
 
 position = Vector2( -52, 6 )
 _sections_unfolded = [ "Transform" ]
 kColor = 2
 kKey = "S"
 
-[node name="ColorButton3" parent="Node2D" index="3" instance=ExtResource( 10 )]
+[node name="ColorButton3" parent="Node2D" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 8.54816, 6 )
 _sections_unfolded = [ "Transform" ]
 kColor = 3
 kKey = "D"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="4"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
 
-stream = ExtResource( 11 )
+stream = ExtResource( 12 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = true
@@ -1934,7 +2030,7 @@ mix_target = 0
 bus = "Master"
 _sections_unfolded = [ "Pause" ]
 
-[node name="AudioOptsNode" type="Node2D" parent="." index="5"]
+[node name="AudioOptsNode" type="Node2D" parent="." index="6"]
 
 position = Vector2( 50, 30 )
 z_index = 100
@@ -1965,7 +2061,7 @@ shortcut = null
 group = null
 flat = false
 align = 0
-_sections_unfolded = [ "custom_icons" ]
+_sections_unfolded = [ "custom_colors", "custom_icons" ]
 
 [node name="AudioToggle" type="CheckButton" parent="AudioOptsNode" index="1"]
 
@@ -1994,25 +2090,16 @@ flat = false
 align = 0
 _sections_unfolded = [ "custom_icons" ]
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="6"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="7"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 15 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." index="7"]
-
-stream = ExtResource( 15 )
-volume_db = -5.0
-pitch_scale = 1.0
-autoplay = false
-mix_target = 0
-bus = "Master"
-
-[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." index="8"]
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." index="8"]
 
 stream = ExtResource( 16 )
 volume_db = -5.0
@@ -2020,6 +2107,19 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="." index="9"]
+
+stream = ExtResource( 17 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="10"]
+
+environment = SubResource( 23 )
 
 [connection signal="pressed" from="AnimationPlayer/UpUI/Node2D2/PlayButton" to="." method="_on_PlayButton_pressed"]
 

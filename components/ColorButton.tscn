@@ -32,9 +32,10 @@ kKey = null
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
+modulate = Color( 1, 1, 1, 0.607843 )
 texture = ExtResource( 2 )
 hframes = 2
-_sections_unfolded = [ "Animation" ]
+_sections_unfolded = [ "Animation", "Material", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
